@@ -1,0 +1,43 @@
+@import "components/progressBar/progressBar";
+
+:root {
+  --progress-color: #005cff;
+  --semi-transp-color: #dae6ec;
+  --dark-border-color: #02040f;
+}
+
+#root {
+  height: 90vh;
+  max-width: 70%;
+  padding: 0 70px;
+  margin: 7% auto;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+
+  @media (max-width: 1023px) {
+    max-width: 80%;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 569px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

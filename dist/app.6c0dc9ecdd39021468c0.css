@@ -1,0 +1,172 @@
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*********************************************************************************************************/
+.container {
+  margin: 30px;
+  display: flex;
+  flex: 1 1 400px;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3rem;
+}
+
+.title {
+  font-size: clamp(20px, 6vw, 32px);
+}
+
+.progressBar {
+  display: flex;
+  flex: 1 1 70%;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.progressBar__circle {
+  --progress: 0;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 50%;
+  height: 40%;
+  aspect-ratio: 1;
+  position: relative;
+  background: conic-gradient(var(--progress-color) calc(var(--progress) * 1%), var(--semi-transp-color) calc(var(--progress) * 1%));
+  border-radius: 50%;
+  opacity: 1;
+}
+.progressBar__circle-animated {
+  animation: 2.5s infinite rotation ease;
+}
+.progressBar__circle-hidden {
+  animation: 0.5s fade-away ease-out;
+  opacity: 0;
+}
+.progressBar__circle:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  width: 83%;
+  aspect-ratio: 1;
+}
+.progressBar__settings {
+  display: flex;
+  flex: 0.4 0 150px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.settings {
+  font-size: 1.5rem;
+}
+.settings__property {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  gap: 24px;
+}
+.settings__input {
+  width: 50px;
+  height: 2rem;
+  text-align: center;
+  border-radius: 30px;
+  border: var(--dark-border-color) 2px solid;
+  font-size: 1rem;
+  outline: none;
+}
+.settings__input:focus {
+  outline: none;
+  border-color: var(--progress-color);
+}
+.settings__checkbox {
+  display: none;
+}
+.settings__checkbox:checked + .toggle {
+  background: #005cff;
+}
+.settings__checkbox:checked + .toggle:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.toggle {
+  cursor: pointer;
+  width: 58px;
+  height: 30px;
+  background: #dae6ec;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+.toggle:after {
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+@media (max-width: 569px) {
+  .container {
+    margin: 25px 10px;
+  }
+  .progressBar {
+    gap: 4rem;
+  }
+  .settings {
+    font-size: 1.125rem;
+  }
+  .progressBar__settings {
+    align-self: center;
+    max-width: 100%;
+    gap: 15px;
+  }
+}
+:root {
+  --progress-color: #005cff;
+  --semi-transp-color: #dae6ec;
+  --dark-border-color: #02040f;
+}
+
+#root {
+  height: 90vh;
+  max-width: 70%;
+  padding: 0 70px;
+  margin: 7% auto;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+@media (max-width: 1023px) {
+  #root {
+    max-width: 80%;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 569px) {
+  #root {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=app.6c0dc9ecdd39021468c0.css.map*/
