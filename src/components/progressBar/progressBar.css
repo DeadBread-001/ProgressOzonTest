@@ -1,0 +1,83 @@
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.circular-progress {
+    opacity: 1;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: conic-gradient(#005cff 0deg, #eaf0f6 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fade-away {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.circular-progress__hidden {
+    animation: 0.5s fade-away ease-out;
+    opacity: 0;
+}
+
+.circular-progress::before {
+    content: "";
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.progress-value {
+    position: relative;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.toggle-label {
+    cursor: pointer;
+    width: 45px;
+    height: 30px;
+    background: #dae6ec;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.toggle-label:after {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input[type=checkbox]:checked + .toggle-label {
+    background: #005cff;
+}
+
+input[type=checkbox]:checked + .toggle-label:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+

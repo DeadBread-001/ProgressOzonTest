@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Block Prototype</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="src/index.css">
 </head>
 <body>
-<div class="progress-container">
-    <div class="progress">
-        <div class="progress-circle">
-            <div class="progress-left"></div>
-            <div class="progress-right"></div>
-        </div>
-        <div class="progress-value">0%</div>
+<div class="container">
+    <div class="circular-progress">
     </div>
     <div class="controls">
         <label for="valueInput">Value:</label>
@@ -21,12 +16,15 @@
         <label>
             Animate:
             <input type="checkbox" id="animateToggle">
+            <label class="toggle-label" for="animateToggle"></label>
         </label>
         <label>
             Hide:
             <input type="checkbox" id="hideToggle">
+            <label class="toggle-label" for="hideToggle"></label>
         </label>
     </div>
 </div>
 </body>
+<script type="text/javascript" src="src/components/progressBar/progressBar.js"></script>
 </html>
