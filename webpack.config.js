@@ -8,7 +8,7 @@ module.exports = {
     app: ["./src/index.js"],
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     filename: "[name].[contenthash].js",
     publicPath: "/",
     clean: true,
@@ -20,7 +20,7 @@ module.exports = {
     client: {
       overlay: false,
     },
-    static: path.resolve(__dirname, "dist"),
+    static: path.resolve(__dirname, "docs"),
     port: 8080,
   },
   devtool: "source-map",
