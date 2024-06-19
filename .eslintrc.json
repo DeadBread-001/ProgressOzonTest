@@ -8,7 +8,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["*.precompiled.js", "/docs/*"],
+  "ignorePatterns": ["*.precompiled.js", "/dist/*"],
   "rules": {
     "linebreak-style": "off",
     "new-cap": "off",
